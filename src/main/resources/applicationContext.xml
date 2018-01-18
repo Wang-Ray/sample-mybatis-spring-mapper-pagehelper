@@ -43,8 +43,8 @@
         <property name="typeAliasesPackage" value="wang.angi.sample.mybatis.spring.mapperhelper.model"/>
         <property name="plugins">
             <array>
+            	<!-- pagehelper分页插件 -->
                 <bean class="com.github.pagehelper.PageInterceptor">
-                    <!-- 这里的几个配置主要演示如何使用，如果不理解，一定要去掉下面的配置 -->
                     <property name="properties">
                         <value>
                             helperDialect=mysql

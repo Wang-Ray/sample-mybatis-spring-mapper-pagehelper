@@ -1,2 +1,1 @@
-sample spring project for MyBatis Generator maven
-mapperhelper
+sample spring project with mapperhelper and pagehelper
