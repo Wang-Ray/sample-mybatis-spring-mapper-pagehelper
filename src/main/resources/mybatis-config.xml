@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <!-- 别名 -->
+    <typeAliases>
+        <package name="wang.angi.sample.mybatis.generator.maven.model"/>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+        </plugin>
+    </plugins>
+    <!-- 基于SQLSession的mapper只能通过xml定义（没有Mapper接口） -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/test" />
+                <property name="username" value="root" />
+                <property name="password" value="mysql" />
+            </dataSource>
+        </environment>
+        <environment id="oracle">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.OracleDriver" />
+                <property name="url" value="jdbc:oracle:thin:@192.168.70.140:1521:ctsdb" />
+                <property name="username" value="CTSDB_DEV" />
+                <property name="password" value="CTSDB_DEV_2017" />
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="wang.angi.sample.mybatis.generator.maven.mapper"/>
+    </mappers>
+</configuration>

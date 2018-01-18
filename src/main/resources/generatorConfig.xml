@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<context id="mysqlTables" defaultModelType="flat" targetRuntime="MyBatis3Simple">
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+			<property name="caseSensitive" value="true"/>
+		</plugin>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/test" userId="root"
+			password="mysql">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="wang.angi.sample.mybatis.spring.mapperhelper.model"
+			targetProject="src/main/java">
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="wang.angi.sample.mybatis.spring.mapperhelper.mapper"
+			targetProject="src/main/resources">
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="wang.angi.sample.mybatis.spring.mapperhelper.mapper"
+			targetProject="src/main/java">
+		</javaClientGenerator>
+
+		<table tableName="city">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
+	</context>
+</generatorConfiguration>
