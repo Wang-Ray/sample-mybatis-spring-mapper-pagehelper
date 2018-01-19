@@ -7,7 +7,7 @@
 	<context id="mysqlTables" defaultModelType="flat" targetRuntime="MyBatis3Simple">
 		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
 			<property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
-			<property name="caseSensitive" value="true"/>
+			<property name="forceAnnotation" value="true"/>
 		</plugin>
 
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"

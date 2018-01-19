@@ -8,22 +8,26 @@ public class City {
      * id
      */
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     /**
      * 姓名
      */
+    @Column(name = "name")
     private String name;
 
     /**
      * 州
      */
+    @Column(name = "state")
     private String state;
 
     /**
      * 国家
      */
+    @Column(name = "country")
     private String country;
 
     /**
