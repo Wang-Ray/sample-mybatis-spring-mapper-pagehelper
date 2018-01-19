@@ -14,6 +14,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:component-scan base-package="wang.angi.sample.mybatis.spring.mapperhelper"></context:component-scan>
     <context:property-placeholder location="classpath:config.properties"/>
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">

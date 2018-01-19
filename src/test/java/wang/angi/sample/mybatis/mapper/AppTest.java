@@ -12,6 +12,7 @@ import com.github.pagehelper.PageHelper;
 import tk.mybatis.mapper.entity.Example;
 import wang.angi.sample.mybatis.spring.mapperhelper.mapper.CityMapper;
 import wang.angi.sample.mybatis.spring.mapperhelper.model.City;
+import wang.angi.sample.mybatis.spring.mapperhelper.service.CityService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath*:spring/*.xml")
@@ -20,11 +21,15 @@ public class AppTest {
 	@Autowired
 	private CityMapper cityMapper;
 
+	@Autowired
+	private CityService cityService;
+
 	@Test
 	public void testAbc1() {
 		Assert.notNull(cityMapper);
 	}
 
+	@Test
 	public void testAll() {
 		City city = new City();
 		city.setName("WuHan");
@@ -57,6 +62,12 @@ public class AppTest {
 		PageHelper.startPage(2, 3);
 		System.out.println(cityMapper.selectByExample(new Example(City.class)).size());
 
+	}
+
+	@Test
+	public void testCityService() {
+		Assert.notNull(cityService);
+		System.out.println(cityService.selectByCity(new City(), 2, 3).size());
 	}
 
 }
