@@ -14,8 +14,7 @@ import wang.angi.sample.mybatis.spring.mapperhelper.mapper.CityMapper;
 import wang.angi.sample.mybatis.spring.mapperhelper.model.City;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-// bean容器配置
-@ContextConfiguration(locations = { "classpath*:applicationContext.xml" })
+@ContextConfiguration("classpath*:spring/*.xml")
 public class AppTest {
 
 	@Autowired
