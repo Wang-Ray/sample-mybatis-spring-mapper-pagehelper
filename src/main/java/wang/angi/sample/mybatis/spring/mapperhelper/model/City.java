@@ -111,7 +111,7 @@ public class City {
     /**
      * 获取创建人
      *
-     * @return created_by - 创建人
+     * @return createdBy - 创建人
      */
     public String getCreatedBy() {
         return createdBy;
