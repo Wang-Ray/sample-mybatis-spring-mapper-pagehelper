@@ -1,1 +1,1 @@
-sample spring project with mapperhelper and pagehelper
+sample spring project with mapper and pagehelper
